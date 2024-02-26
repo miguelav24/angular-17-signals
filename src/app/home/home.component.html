@@ -1,0 +1,24 @@
+<p>Precio: {{ price() }}</p>
+<input type="text" (input)="onChange($event)" [ngModel]="price()" />
+
+<p>Usuario: {{ user() | json }}</p>
+<p>Nombre: {{ user().name }}</p>
+<p>Framework: {{ user().framework }}</p>
+
+<button class="btn btn-danger mb-3" (click)="changePrice()">
+  Cambiar precio
+</button>
+<button class="btn btn-danger ms-3 mb-3" (click)="incrementPrice()">
+  Subir precio
+</button>
+<button class="btn btn-danger ms-3 mb-3" (click)="decrementPrice()">
+  Bajar precio
+</button>
+
+<p>Precio sólo lectura: {{ priceReadOnly() }}</p>
+
+@if(price() > 0) {
+<p>Total: {{ total() }}</p>
+}
+
+<p>Mensaje: {{ message() }}</p>
